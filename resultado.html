@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Resultado do Cadastro</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Resultado do Cadastro</h2>
+        <div id="result"></div>
+        <a href="index.html" class="btn voltar">Voltar</a>
+    </div>
+
+    <script>
+      
+      
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(function(part) {
+                const item = part.split("=");
+                params[decodeURIComponent(item[0])] = decodeURIComponent(item[1] || '');
+            });
+            return params;
+        }
+
+       
+        
+        const params = getQueryParams();
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <div class="result-item">
+                <strong>Nome:</strong> ${params.name}
+            </div>
+            <div class="result-item">
+                <strong>Endereço:</strong> ${params.endereco}
+            </div>
+            <div class="result-item">
+                <strong>CEP:</strong> ${params.cep}
+            </div>
+            <div class="result-item">
+                <strong>CPF:</strong> ${params.cpf}
+            </div>
+            <div class="result-item">
+                <strong>Telefone:</strong> ${params.telefone}
+            </div>
+            <div class="result-item">
+                <strong>CNPJ:</strong> ${params.cnpj}
+            </div>
+            <div class="result-item">
+                <strong>Código:</strong> ${params.codigo}
+            </div>  `;
+            
+
+
+    </script>
+</body>
+</html>

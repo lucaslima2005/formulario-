@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cadastro de Usuário</h2>
+        <form id="user-form">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Seu Nome" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" placeholder="Seu Endereço" required>
+
+                <label>CEP</label>
+                <input type="text" id="cep" oninput=mascara_cep() maxlength="10" placeholder="xx.xxx-xxx" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" oninput=mascara_cpf() maxlength="11" placeholder="xxx.xxx.xxx-xx" required>
+                
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone"  oninput=mascara_telefone() maxlength="14" placeholder="(xx) x xxxx-xxxx" required>
+               
+
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj"  oninput=mascara_cnpj() maxlength="16"  placeholder="XX.XXX.XXX/0001-XX" required>
+
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" oninput=mascara_codigo() maxlength="17" placeholder="xx_xx//xxx-xxx.9.xxx" required>
+                
+                <a href="resultado.html">
+                    <input type="submit" value="Enviar" oninput=enviardados()>
+                </a>
+                
+
+
+                
+
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
